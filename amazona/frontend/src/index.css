@@ -38,6 +38,7 @@ body {
 .header-links a {
   color: white;
   text-decoration: none;
+  padding-right: 1rem;
 }
 .header-links a:hover {
   color: orange;
