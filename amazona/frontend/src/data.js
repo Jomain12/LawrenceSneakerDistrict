@@ -12,7 +12,7 @@ export default {
     },
     {
       _id: "2",
-      name: "Flt Shirt",
+      name: "Fit Shirt",
       category: "Shirts",
       image: "/images/d1.jpg",
       price: 40,
