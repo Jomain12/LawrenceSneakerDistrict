@@ -13,7 +13,7 @@ function SigninScreen(props) {
 
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push("/signin");
     }
     return () => {
       //
