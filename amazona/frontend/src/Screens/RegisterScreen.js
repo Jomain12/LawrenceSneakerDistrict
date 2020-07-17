@@ -47,7 +47,7 @@ function RegisterScreen(props) {
             ></input>
           </li>
           <li>
-            <label HTMLFor="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -56,7 +56,7 @@ function RegisterScreen(props) {
             ></input>
           </li>
           <li>
-            <label HTMLFor="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -65,7 +65,7 @@ function RegisterScreen(props) {
             ></input>
           </li>
           <li>
-            <label HTMLFor="rePassword">Re-Enter Password</label>
+            <label htmlFor="rePassword">Re-Enter Password</label>
             <input
               type="rePassword"
               id="rePassword"
