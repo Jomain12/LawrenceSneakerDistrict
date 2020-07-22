@@ -10,6 +10,7 @@ import bodyParser from "body-parser";
 dotenv.config();
 
 const mongodbUrl = config.MONGODB_URL;
+const port = config.PORT;
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,

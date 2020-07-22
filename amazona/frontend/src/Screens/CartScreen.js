@@ -95,5 +95,3 @@ function CartScreen(props) {
 }
 
 export default CartScreen;
-
-// basir 2 hour 50 minutes
