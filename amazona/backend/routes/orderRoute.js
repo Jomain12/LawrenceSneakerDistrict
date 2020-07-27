@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import Order from "../models/orderModel";
 import { isAuth } from "../util";
 
 const router = Router();
@@ -17,3 +18,5 @@ router.post("/", isAuth, async (req, res) => {
   const newOrderCreated = await newOrder.save();
   res.status(201).send({ message: "New Order Created", data: newOrderCreated });
 });
+
+export default router;

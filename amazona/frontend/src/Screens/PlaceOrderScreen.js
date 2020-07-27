@@ -25,7 +25,7 @@ function PlaceOrderScreen(props) {
   const placeOrderHandler = () => {
     dispatch(
       createOrder({
-        cartItems,
+        orderItems: cartItems,
         shipping,
         payment,
         itemsPrice,
@@ -71,7 +71,7 @@ function PlaceOrderScreen(props) {
                 <div>Cart is empty</div>
               ) : (
                 cartItems.map((item) => (
-                  <li key="id">
+                  <li>
                     <div className="cart-image">
                       <img src={item.image} alt="product" />
                     </div>
