@@ -1,0 +1,19 @@
+import express, { Router } from "express";
+import { isAuth } from "../util";
+
+const router = Router();
+
+router.post("/", isAuth, async (req, res) => {
+  const newOrder = new Order({
+    orderitems: req.body.orderitems,
+    user: req.user._id,
+    shipping: req.body.shipping,
+    payment: req.body.payment,
+    itemsPrice: req.body.itemsPrice,
+    taxPrice: req.body.taxPrice,
+    shippingPrice: req.body.shippingPrice,
+    totalPrice: req.body.totalPrice,
+  });
+  const newOrderCreated = await newOrder.save();
+  res.status(201).send({ message: "New Order Created", data: newOrderCreated });
+});
