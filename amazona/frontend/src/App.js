@@ -22,6 +22,7 @@ function App() {
   const closeMenu = () => {
     document.querySelector(".sidebar").classList.remove("open");
   };
+  console.log(userInfo);
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -37,7 +38,6 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
-            <Link to="/signin">Sign In</Link>
           </div>
         </header>
         <aside className="sidebar">
