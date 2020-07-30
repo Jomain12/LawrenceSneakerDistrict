@@ -30,6 +30,10 @@ app.use("/api/products", productRoute);
 
 app.use("/api/orders", orderRoute);
 
+app.get("/api/config/paypal", (req, res) => {
+  res.send(config.PAYPAL_CLIENT_ID);
+});
+
 // app.get("/api/products/:id", (req, res) => {
 //   const productId = req.params.id;
 //   const product = data.products.find((x) => x._id === productId);
