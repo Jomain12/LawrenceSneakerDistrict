@@ -22,7 +22,7 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", isAuth, async (req, res) => {
   const userId = req.params.id;
   const user = await User.findById(userId);
   if (user) {
@@ -30,21 +30,15 @@ router.put("/:id", async (req, res) => {
     user.email = req.body.email || user.email;
     user.password = req.body.password || user.password;
     const updatedUser = await user.save();
-  }
-  const signinUser = await User.findOne({
-    email: req.body.email,
-    password: req.body.password,
-  });
-  if (signinUser) {
     res.send({
-      _id: signinUser.id,
-      name: signinUser.name,
-      email: signinUser.email,
-      isAdmin: signinUser.isAdmin,
-      token: getToken(signinUser),
+      _id: updatedUser.id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: getToken(updatedUser),
     });
   } else {
-    res.status(401).send({ msg: "Invalid Email Or Password." });
+    res.status(404).send({ msg: "User Not Found." });
   }
 });
 

@@ -23,18 +23,18 @@ function ProfileScreen(props) {
   const userUpdate = useSelector((state) => state.userUpdate);
   const { loading, success, error } = userUpdate;
 
-  //   const myOrderList = useSelector((state) => state.myOrderList);
-  //   const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
-  //   useEffect(() => {
-  //     if (userInfo) {
-  //       console.log(userInfo.name);
-  //       setEmail(userInfo.email);
-  //       setName(userInfo.name);
-  //       setPassword(userInfo.password);
-  //     }
-  //     dispatch(listMyOrders());
-  //     return () => {};
-  //   }, [userInfo]);
+  const myOrderList = useSelector((state) => state.myOrderList);
+  const { loading: loadingOrders, orders, error: errorOrders } = myOrderList;
+  useEffect(() => {
+    if (userInfo) {
+      console.log(userInfo.name);
+      setEmail(userInfo.email);
+      setName(userInfo.name);
+      setPassword(userInfo.password);
+    }
+    dispatch(listMyOrders());
+    return () => {};
+  }, [userInfo]);
 
   return (
     <div className="profile">
