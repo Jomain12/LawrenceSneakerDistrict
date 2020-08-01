@@ -22,6 +22,32 @@ router.post("/signin", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  const userId = req.params.id;
+  const user = await User.findById(userId);
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.password = req.body.password || user.password;
+    const updatedUser = await user.save();
+  }
+  const signinUser = await User.findOne({
+    email: req.body.email,
+    password: req.body.password,
+  });
+  if (signinUser) {
+    res.send({
+      _id: signinUser.id,
+      name: signinUser.name,
+      email: signinUser.email,
+      isAdmin: signinUser.isAdmin,
+      token: getToken(signinUser),
+    });
+  } else {
+    res.status(401).send({ msg: "Invalid Email Or Password." });
+  }
+});
+
 router.post("/register", async (req, res) => {
   const user = new User({
     name: req.body.name,
