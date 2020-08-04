@@ -222,5 +222,3 @@ function ProductsScreen(props) {
   );
 }
 export default ProductsScreen;
-
-// 4:29:00 coding with basir
