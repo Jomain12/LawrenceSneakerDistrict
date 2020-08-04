@@ -41,6 +41,17 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <a href="#">Admin</a>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                    <Link to="/products">Products</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
         <aside className="sidebar">
@@ -60,7 +71,7 @@ function App() {
         <main className="main">
           <div className="content">
             <Route path="/order/:id" component={OrderScreen} />
-            <Route path="orders" component={OrdersScreen} />
+            <Route path="/orders" component={OrdersScreen} />
             <Route path="/profile" component={ProfileScreen} />
             <Route path="/register" component={RegisterScreen} />
             <Route path="/shipping" component={ShippingScreen} />
