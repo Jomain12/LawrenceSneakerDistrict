@@ -27,7 +27,9 @@ function OrdersScreen(props) {
   const deleteHandler = (order) => {
     dispatch(deleteOrder(order._id));
   };
-  return (
+  return loading ? (
+    <div>Loading...</div>
+  ) : (
     <div className="content content-margined">
       <div className="order-header">
         <h3>Orders</h3>
@@ -55,9 +57,9 @@ function OrdersScreen(props) {
                 <td>{order.createdAt}</td>
                 <td>{order.totalPrice}</td>
                 <td>{order.user.name}</td>
-                <td>{order.isPaid}</td>
+                <td>{order.isPaid.toString()}</td>
                 <td>{order.paidAt}</td>
-                <td>{order.isDelivered}</td>
+                <td>{order.isDelivered.toString()}</td>
                 <td>{order.deliveredAt}</td>
                 <td>
                   <Link to={"/order/" + order._id} className="button secondary">
@@ -65,7 +67,7 @@ function OrdersScreen(props) {
                   </Link>{" "}
                   <button
                     type="button"
-                    onClick={deleteHandler}
+                    onClick={() => deleteHandler(order)}
                     className="button secondary"
                   >
                     Delete
