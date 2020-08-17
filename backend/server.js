@@ -7,10 +7,8 @@ import productRoute from "./routes/productRoute";
 import bodyParser from "body-parser";
 import orderRoute from "./routes/orderRoute";
 
-const mongodbUrl = config.MONGODB_URL;
-const port = config.PORT;
 mongoose
-  .connect(mongodbUrl, {
+  .connect(config.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -31,6 +29,6 @@ app.get("/api/config/paypal", (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
 });
 
-app.listen(5000, () => {
-  console.log("Server started at localhost 5000");
+app.listen(config.PORT, () => {
+  console.log("Server started at localhost " + config.PORT);
 });
