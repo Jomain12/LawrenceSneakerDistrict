@@ -28,7 +28,7 @@ function ProductScreen(props) {
     return () => {
       //
     };
-  }, []);
+  }, [productSaveSuccess]);
 
   const submitHandler = (e) => {
     e.preventDefault();
