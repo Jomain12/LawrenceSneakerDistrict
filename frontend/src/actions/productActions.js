@@ -11,6 +11,9 @@ import {
   PRODUCT_DELETE_REQUEST,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_FAIL,
+  PRODUCT_REVIEW_SAVE_REQUEST,
+  PRODUCT_REVIEW_SAVE_SUCCESS,
+  PRODUCT_REVIEW_SAVE_FAIL,
 } from "../constants/productConstants";
 import axios from "axios";
 import Axios from "axios";
@@ -94,4 +97,34 @@ const deleteProduct = (productId) => async (dispatch, getState) => {
   }
 };
 
-export { listProducts, detailsProduct, saveProduct, deleteProduct };
+const saveProductReview = (productId, review) => async (dispatch, getState) => {
+  try {
+    const {
+      userSignin: {
+        userInfo: { token },
+      },
+    } = getState();
+    dispatch({ type: PRODUCT_REVIEW_SAVE_REQUEST, payload: review });
+    const { data } = await axios.post(
+      `/api/products/${productId}/reviews`,
+      review,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    dispatch({ type: PRODUCT_REVIEW_SAVE_SUCCESS, payload: data });
+  } catch (error) {
+    // report error
+    dispatch({ type: PRODUCT_REVIEW_SAVE_FAIL, payload: error.message });
+  }
+};
+
+export {
+  listProducts,
+  detailsProduct,
+  saveProduct,
+  deleteProduct,
+  saveProductReview,
+};
