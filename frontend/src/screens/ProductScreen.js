@@ -29,7 +29,6 @@ function ProductScreen(props) {
       //
     };
   }, [productSaveSuccess]);
-
   const submitHandler = (e) => {
     e.preventDefault();
     // dispatch actions
@@ -41,7 +40,6 @@ function ProductScreen(props) {
       })
     );
   };
-
   const handleAddToCart = () => {
     props.history.push("/cart/" + props.match.params.id + "?qty=" + qty);
   };
@@ -54,7 +52,7 @@ function ProductScreen(props) {
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
-        <div>{error}</div>
+        <div>{error} </div>
       ) : (
         <>
           <div className="details">
@@ -78,17 +76,17 @@ function ProductScreen(props) {
                   Price: <b>${product.price}</b>
                 </li>
                 <li>
-                  Description
+                  Description:
                   <div>{product.description}</div>
                 </li>
               </ul>
             </div>
-
             <div className="details-action">
               <ul>
-                <li>Price:{product.price}</li>
+                <li>Price: {product.price}</li>
                 <li>
-                  Status:{product.countInStock > 0 ? "In Stock" : "Unavailable"}
+                  Status:{" "}
+                  {product.countInStock > 0 ? "In Stock" : "Unavailable."}
                 </li>
                 <li>
                   Qty:{" "}
@@ -120,7 +118,7 @@ function ProductScreen(props) {
           </div>
           <div className="content-margined">
             <h2>Reviews</h2>
-            {!product.reviews.length && <div>There are no Reviews</div>}
+            {!product.reviews.length && <div>There is no review</div>}
             <ul className="review" id="reviews">
               {product.reviews.map((review) => (
                 <li key={review._id}>
@@ -133,7 +131,7 @@ function ProductScreen(props) {
                 </li>
               ))}
               <li>
-                <h3>Write a customer review!</h3>
+                <h3>Write a customer review</h3>
                 {userInfo ? (
                   <form onSubmit={submitHandler}>
                     <ul className="form-container">
@@ -149,7 +147,7 @@ function ProductScreen(props) {
                           <option value="2">2- Fair</option>
                           <option value="3">3- Good</option>
                           <option value="4">4- Very Good</option>
-                          <option value="5">5- Excellent</option>
+                          <option value="5">5- Excelent</option>
                         </select>
                       </li>
                       <li>
@@ -161,8 +159,8 @@ function ProductScreen(props) {
                         ></textarea>
                       </li>
                       <li>
-                        <button type="submit" classname="button primary">
-                          Submit Review
+                        <button type="submit" className="button primary">
+                          Submit
                         </button>
                       </li>
                     </ul>

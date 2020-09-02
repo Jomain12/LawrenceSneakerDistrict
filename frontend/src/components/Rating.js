@@ -7,7 +7,7 @@ export default function Rating(props) {
     <div className="rating">
       <span>
         <i
-          classname={
+          className={
             props.value >= 1
               ? "fa fa-star"
               : props.value >= 0.5
@@ -18,7 +18,7 @@ export default function Rating(props) {
       </span>
       <span>
         <i
-          classname={
+          className={
             props.value >= 2
               ? "fa fa-star"
               : props.value >= 1.5
@@ -29,7 +29,7 @@ export default function Rating(props) {
       </span>
       <span>
         <i
-          classname={
+          className={
             props.value >= 3
               ? "fa fa-star"
               : props.value >= 2.5
@@ -40,7 +40,7 @@ export default function Rating(props) {
       </span>
       <span>
         <i
-          classname={
+          className={
             props.value >= 4
               ? "fa fa-star"
               : props.value >= 3.5
@@ -51,7 +51,7 @@ export default function Rating(props) {
       </span>
       <span>
         <i
-          classname={
+          className={
             props.value >= 5
               ? "fa fa-star"
               : props.value >= 4.5
