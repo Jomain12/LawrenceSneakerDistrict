@@ -61,6 +61,12 @@ function App() {
           </button>
           <ul className="categories">
             <li>
+              <Link to="/category/Yeezys">Yeezys</Link>
+            </li>
+            <li>
+              <Link to="/category/Jordans">Air Jordans</Link>
+            </li>
+            <li>
               <Link to="/category/Pants">Pants</Link>
             </li>
             <li>
