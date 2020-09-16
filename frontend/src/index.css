@@ -463,3 +463,10 @@ tbody > tr:nth-child(odd) {
 .categories a:hover {
   background-color: #c0c0c0;
 }
+
+@media (max-width: 500px) {
+  .brand a {
+    font: 1.5rem;
+    display: none;
+  }
+}
