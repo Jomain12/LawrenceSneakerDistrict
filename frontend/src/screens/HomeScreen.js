@@ -85,7 +85,6 @@ function HomeScreen(props) {
           ))}
         </ul>
       )}
-      );
     </>
   );
 }
