@@ -98,6 +98,10 @@ function ProfileScreen(props) {
             </ul>
           </form>
         </div>
+        <p className="profile-error">
+          If you are returning to the website and received a 401 error please
+          logout and log back in to fix this. Thank you!
+        </p>
       </div>
       <div className="profile-orders content-margined">
         {loadingOrders ? (
