@@ -468,7 +468,6 @@ tbody > tr:nth-child(odd) {
 
 @media (max-width: 500px) {
   .brand a {
-    font: 1.5rem;
-    display: none;
+    font-size: 1.8rem;
   }
 }
