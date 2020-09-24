@@ -412,7 +412,7 @@ tbody > tr:nth-child(odd) {
   flex: 3 1 60rem;
 }
 .profile-error {
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 
 /* admin */
@@ -471,9 +471,72 @@ tbody > tr:nth-child(odd) {
 
 @media (max-width: 500px) {
   .brand a {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
   }
   .header-links a {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    padding: 0.2rem;
+  }
+  .header {
+    padding: 0.2rem;
+  }
+
+  /* Home Screen */
+
+  .products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .products li {
+    list-style-type: none;
+    padding: 0;
+    flex: 0 1 10rem;
+    margin: 1rem;
+    height: 45rem;
+    border-bottom: 0.1rem #c0c0c0 solid;
+  }
+  .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .product-image {
+    max-width: 10rem;
+    max-height: 10rem;
+  }
+
+  /* filter */
+
+  .filter {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 45rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .filter input,
+  .filter button,
+  .filter select {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem #c0c0c0 solid;
+    font-size: 0.8rem;
+  }
+  .categories {
+    padding: 0;
+    list-style-type: none;
+  }
+  .categories a {
+    display: flex;
+    padding: 1rem;
+  }
+
+  .categories a:hover {
+    background-color: #c0c0c0;
   }
 }
